@@ -10,7 +10,7 @@
                     </div>
                     <div class="d-flex justify-content-end ">
                         <div class="d-flex flex-column align-items-start ">
-                            <h2 class="project_title pt-1 text-dark fw-bold mb-1">{{$keyword}}</h2>
+                            <h2 class="project_title pt-1 text-dark fw-bold mb-1">new Project</h2>
                             <span class="project_description text-muted mt-0 ">here is
                                 description</span>
                         </div>
