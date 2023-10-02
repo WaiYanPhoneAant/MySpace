@@ -3,11 +3,11 @@
     <div class="container-fluid p-0">
         <section class="w-auto  hero_section shadow-sm p-1 ">
             <nav class="container d-flex justify-content-between  fw-bold p-2">
-                <div class="logo text-dark">Source Code</div>
-                <div class="link  text-dark">wypa.dev</div>
+                <div class="logo">Source Code</div>
+                <div class="link ">wypa.dev</div>
             </nav>
             <header class="text-center mt-4">
-                <h1 class="fs-4 fw-bolder  text-dark">All Of My Works</h1>
+                <h1 class="fs-4 fw-bolder ">All Of My Works</h1>
             </header>
             <livewire:projectsearch ></livewire:projectsearch>
             <div class="col-10 m-auto tags row text-center justify-content-center mt-4 mb-2 gap-lg-4 gap-2">
