@@ -10,6 +10,7 @@ use Filament\Tables\Table;
 use Filament\Resources\Resource;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Forms\Components\RichEditor;
 use Filament\Tables\Columns\SelectColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
@@ -34,8 +35,6 @@ class ProjectResource extends Resource
             Forms\Components\TextInput::make('tech_stack')
                 ->required()
                 ->maxLength(255),
-            Forms\Components\Textarea::make('description')
-                ->maxLength(255),
             Forms\Components\Select::make('visibility')
                 ->options([
                     'publish' => 'publish',
@@ -43,6 +42,10 @@ class ProjectResource extends Resource
                 ])->native(false)
                 ->required(),
             Forms\Components\TextInput::make('url'),
+
+            RichEditor::make('description')
+                ->maxLength(255)
+                ->columnSpan(2),
             ]);
 
     }

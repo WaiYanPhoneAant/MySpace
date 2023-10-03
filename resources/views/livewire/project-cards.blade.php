@@ -1,8 +1,11 @@
 
 <div class="row   justify-content-start ">
+    @if ($loading==true)
+        <x-cardloading></x-cardloading>
+    @endif
     @if (count($projects)>0)
         @foreach ($projects as $project)
-            <div class="col-lg-3 col-md-6 col-12 mb-3 p-2">
+            <div wire:key="{{$project->id}}" class="col-lg-3 col-md-6 col-12 mb-3 p-2">
                 <a href="./projectPreview.html" class="text-decoration-none">
                     <div class="project_card p-3 rounded-3">
                         <div class="d-flex gap-2 col-12 ">
@@ -26,10 +29,10 @@
                         </div>
 
                         <div class="project_detail mt-3 text-muted">
-                            <button class="btn btn-sm shadow-sm"><i class="fa-brands fa-github"></i>
-                                GitHub</button>
-                            <button class="btn btn-sm shadow-sm"><i class="fa-brands fa-nfc-symbol"></i>
-                                Preview</button>
+                            <a class="btn btn-sm shadow-sm" href="{{$project->url ?? '#'}}"><i class="fa-brands fa-github"></i>
+                                GitHub</a>
+                            <a class="btn btn-sm shadow-sm"><i class="fa-brands fa-nfc-symbol"></i>
+                                Preview</a>
                            @if ($project->visibility=='private')
                                <button class="btn btn-sm shadow-sm bg-light-danger text-white"><i class="fa-solid fa-lock"></i>
                                     Private</button>
@@ -44,3 +47,4 @@
     @endif
 
 </div>
+
