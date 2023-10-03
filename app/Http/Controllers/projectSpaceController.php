@@ -35,7 +35,7 @@ class projectSpaceController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('projectSpace.view',compact('id'));
     }
 
     /**

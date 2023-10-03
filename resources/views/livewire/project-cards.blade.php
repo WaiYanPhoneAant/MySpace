@@ -6,7 +6,7 @@
     @if (count($projects)>0)
         @foreach ($projects as $project)
             <div wire:key="{{$project->id}}" class="col-lg-3 col-md-6 col-12 mb-3 p-2">
-                <a href="./projectPreview.html" class="text-decoration-none">
+                <a href="{{route('space.show',$project->id)}}" class="text-decoration-none">
                     <div class="project_card p-3 rounded-3">
                         <div class="d-flex gap-2 col-12 ">
                             <div class="project_img  bg-light">
