@@ -16,7 +16,7 @@
                             <div class="d-flex justify-content-end ">
                                 <div class="d-flex flex-column align-items-start ">
                                     <h2 class="project_title pt-1 text-dark fw-bold mb-1">{{$project->name}}</h2>
-                                    <span class="project_description text-muted mt-0 ">{!! $project->description !!}</span>
+                                    <span class="project_description text-muted mt-0 ">{{$project->title }}</span>
                                 </div>
                                 <!-- <div class="align-self-start d-flex  pt-1 text-end">
                                                                     <span class="badge rounded-pill  bg-primary  bg-opacity-75 text-end">Hello</span>

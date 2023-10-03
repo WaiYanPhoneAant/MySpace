@@ -32,6 +32,9 @@ class ProjectResource extends Resource
             Forms\Components\TextInput::make('name')
                 ->required()
                 ->maxLength(255),
+            Forms\Components\TextInput::make('title')
+                ->required()
+                ->maxLength(255),
             Forms\Components\TextInput::make('tech_stack')
                 ->required()
                 ->maxLength(255),
@@ -56,7 +59,7 @@ class ProjectResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')->searchable(),
-                TextColumn::make('description')->limit(20)->html(),
+                TextColumn::make('title')->limit(50)->html(),
                 TextColumn::make('tech_stack')->searchable(),
                 SelectColumn::make('visibility')
                 ->options([

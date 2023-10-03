@@ -24,16 +24,6 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-10 mt-5 m-auto placeholder-glow">
-                    <p class="text-muted col-6 placeholder">
-                    </p>
-                    <p class="text-muted col-8 placeholder">
-                    </p>
-                    <p class="text-muted col-8 placeholder">
-                    </p>
-                    <p class="text-muted col-12 placeholder">
-                    </p>
-                </div>
             </div>
         </section>
 
