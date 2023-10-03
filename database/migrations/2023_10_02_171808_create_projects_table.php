@@ -18,7 +18,8 @@ return new class extends Migration
             $table->text('tech_stack')->nullable();
             $table->text('logo')->nullable();
             $table->enum('visibility',['publish','private'])->nullable();
-            $table->text('url')->nullable();
+            $table->text('source_code_url')->nullable();
+            $table->text('preview_url')->nullable();
             $table->timestamps();
         });
     }

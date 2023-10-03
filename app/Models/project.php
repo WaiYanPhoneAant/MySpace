@@ -14,6 +14,7 @@ class project extends Model
         'tech_stack',
         'logo',
         'visibility',
-        'url'
+        'source_code_url',
+        'preview_url'
     ];
 }

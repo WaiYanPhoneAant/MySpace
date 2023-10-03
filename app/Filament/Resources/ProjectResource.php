@@ -41,7 +41,8 @@ class ProjectResource extends Resource
                     'private' => 'private',
                 ])->native(false)
                 ->required(),
-            Forms\Components\TextInput::make('url'),
+            Forms\Components\TextInput::make('source_code_url'),
+            Forms\Components\TextInput::make('preview_url'),
 
             RichEditor::make('description')
                 ->maxLength(255)
@@ -55,7 +56,7 @@ class ProjectResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')->searchable(),
-                TextColumn::make('description')->limit(20),
+                TextColumn::make('description')->limit(20)->html(),
                 TextColumn::make('tech_stack')->searchable(),
                 SelectColumn::make('visibility')
                 ->options([

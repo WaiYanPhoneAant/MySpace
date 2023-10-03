@@ -16,7 +16,7 @@
                             <div class="d-flex justify-content-end ">
                                 <div class="d-flex flex-column align-items-start ">
                                     <h2 class="project_title pt-1 text-dark fw-bold mb-1">{{$project->name}}</h2>
-                                    <span class="project_description text-muted mt-0 ">{{$project->description}}</span>
+                                    <span class="project_description text-muted mt-0 ">{!! $project->description !!}</span>
                                 </div>
                                 <!-- <div class="align-self-start d-flex  pt-1 text-end">
                                                                     <span class="badge rounded-pill  bg-primary  bg-opacity-75 text-end">Hello</span>
@@ -29,14 +29,17 @@
                         </div>
 
                         <div class="project_detail mt-3 text-muted">
-                            <a class="btn btn-sm shadow-sm" href="{{$project->url ?? '#'}}"><i class="fa-brands fa-github"></i>
-                                GitHub</a>
-                            <a class="btn btn-sm shadow-sm"><i class="fa-brands fa-nfc-symbol"></i>
-                                Preview</a>
-                           @if ($project->visibility=='private')
-                               <button class="btn btn-sm shadow-sm bg-light-danger text-white"><i class="fa-solid fa-lock"></i>
-                                    Private</button>
-                           @endif
+                            @if ($project->visibility=='private')
+                                <button class="btn btn-sm shadow-sm bg-light-danger text-white"><i class="fa-solid fa-lock"></i>
+                                    Private
+                                </button>
+                            @else
+                                <a class="btn btn-sm shadow-sm" href="{{$project->source_code_url ?? '#'}}" target="__blank"><i
+                                        class="fa-brands fa-github"></i>
+                                    GitHub</a>
+                            @endif
+                            <a class="btn btn-sm shadow-sm" href="{{$project->preview_url ?? '#'}}" target="__blank"><i class="fa-brands fa-nfc-symbol"></i>
+                                Live Preview</a>
                         </div>
                     </div>
                 </a>
