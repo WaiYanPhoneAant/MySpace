@@ -48,8 +48,7 @@ class ProjectResource extends Resource
             Forms\Components\TextInput::make('preview_url'),
 
             RichEditor::make('description')
-                ->maxLength(255)
-                ->columnSpan(2),
+                    ->columnSpan(2),
             ]);
 
     }

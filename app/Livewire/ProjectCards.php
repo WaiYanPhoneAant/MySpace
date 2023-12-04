@@ -12,6 +12,7 @@ class ProjectCards extends Component
 {
     public $keyword = '';
     public $loading = false;
+
     #[On('search')]
     public function updatekeyword($keyword)
     {
@@ -24,10 +25,9 @@ class ProjectCards extends Component
     }
     public function render()
     {
-        $projects = project::when($this->keyword, function ($q) {
+        $projects = project::when($this->keyword !='' && $this->keyword!= 'clearSearch', function ($q) {
             $q->where("name", 'LIKE', "%{$this->keyword}%");
         })->get();
-        $this->loading = false;
         return view('livewire.project-cards', compact('projects'));
     }
 }

@@ -14,5 +14,9 @@ class Projectsearch extends Component
     public function search(){
         $this->dispatch('search',$this->keyword);
     }
+    public function clearSearch(){
+        $this->keyword='';
+        $this->dispatch('search', 'clearSearch');
+    }
 }
 

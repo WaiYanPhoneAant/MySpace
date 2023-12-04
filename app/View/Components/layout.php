@@ -12,9 +12,12 @@ class layout extends Component
      * Create a new component instance.
      */
     public $style;
-    public function __construct($style)
+    public $js;
+    public function __construct($style,$js='')
     {
        $this->style=$style;
+       $this->js= $js ?? '';
+    //    dd($js);
     }
 
     /**
