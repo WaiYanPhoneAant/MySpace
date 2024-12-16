@@ -21,5 +21,5 @@
 </body>
 @livewireScripts
 
-<script src="{{$js}}"></script>
+<script src="{{$js ?? ''}}"></script>
 </html>
