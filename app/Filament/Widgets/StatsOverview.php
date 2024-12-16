@@ -3,7 +3,7 @@
 namespace App\Filament\Widgets;
 
 use Carbon\Carbon;
-use App\Models\project;
+use App\Models\Project;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 
@@ -13,13 +13,13 @@ class StatsOverview extends BaseWidget
     protected function getStats(): array
     {
         $today = Carbon::today(); // Get the current date without the time component
-        $dataForToday = project::whereDate('created_at', $today)->count();
+        $dataForToday = Project::whereDate('created_at', $today)->count();
         $yesterday = Carbon::yesterday(); // Get the date for yesterday
-        $dataForYesterday = project::whereDate('created_at', $yesterday)->count();
+        $dataForYesterday = Project::whereDate('created_at', $yesterday)->count();
 
 
         $last3Day =Carbon::now()->subDays(3); // Get the date for yesterday
-        $dataForLast3Day = project::whereDate('created_at', $last3Day)->count();
+        $dataForLast3Day = Project::whereDate('created_at', $last3Day)->count();
         return [
             Stat::make('Total Project', $dataForToday)
             ->description(($dataForToday- $dataForYesterday).' project increase')

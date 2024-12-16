@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Models\project;
+use App\Models\Project;
 use Livewire\Component;
 use Livewire\Attributes\On;
 use Livewire\Attributes\Lazy;
@@ -25,7 +25,7 @@ class ProjectCards extends Component
     }
     public function render()
     {
-        $projects = project::when($this->keyword !='' && $this->keyword!= 'clearSearch', function ($q) {
+        $projects = Project::when($this->keyword !='' && $this->keyword!= 'clearSearch', function ($q) {
             $q->where("name", 'LIKE', "%{$this->keyword}%");
         })->get();
         return view('livewire.project-cards', compact('projects'));

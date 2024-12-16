@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Models\project;
+use App\Models\Project;
 use Livewire\Component;
 
 class ProjectView extends Component
@@ -15,7 +15,7 @@ class ProjectView extends Component
     public function render()
     {
         try {
-            $project = project::where('id', $this->id)->firstOrFail();
+            $project = Project::where('id', $this->id)->firstOrFail();
             return view('livewire.project-view', compact('project'));
         } catch (\Throwable $th) {
             return back();
