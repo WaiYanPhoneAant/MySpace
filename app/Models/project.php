@@ -16,6 +16,6 @@ class Project extends Model
         'logo',
         'visibility',
         'source_code_url',
-        'preview_url'
+        'preview_url' 
     ];
 }
