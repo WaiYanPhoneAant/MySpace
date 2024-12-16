@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 
 use Filament\Forms;
 use Filament\Tables;
-use App\Models\Project;
+use App\Models\project;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
 use Filament\Resources\Resource;
@@ -20,7 +20,7 @@ use App\Filament\Resources\ProjectResource\RelationManagers;
 
 class ProjectResource extends Resource
 {
-    protected static ?string $model = Project::class;
+    protected static ?string $model = project::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -29,25 +29,25 @@ class ProjectResource extends Resource
     {
         return $form
             ->schema([
-            Forms\Components\TextInput::make('name')
-                ->required()
-                ->maxLength(255),
-            Forms\Components\TextInput::make('title')
-                ->required()
-                ->maxLength(255),
-            Forms\Components\TextInput::make('tech_stack')
-                ->required()
-                ->maxLength(255),
-            Forms\Components\Select::make('visibility')
-                ->options([
-                    'publish' => 'publish',
-                    'private' => 'private',
-                ])->native(false)
-                ->required(),
-            Forms\Components\TextInput::make('source_code_url'),
-            Forms\Components\TextInput::make('preview_url'),
+                Forms\Components\TextInput::make('name')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('title')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('tech_stack')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\Select::make('visibility')
+                    ->options([
+                        'publish' => 'publish',
+                        'private' => 'private',
+                    ])->native(false)
+                    ->required(),
+                Forms\Components\TextInput::make('source_code_url'),
+                Forms\Components\TextInput::make('preview_url'),
 
-            RichEditor::make('description')
+                RichEditor::make('description')
                     ->columnSpan(2),
             ]);
 
@@ -61,19 +61,19 @@ class ProjectResource extends Resource
                 TextColumn::make('title')->limit(50)->html(),
                 TextColumn::make('tech_stack')->searchable(),
                 SelectColumn::make('visibility')
-                ->options([
-                    'publish' => 'publish',
-                    'private' => 'private'
-                ])
-                ->selectablePlaceholder(false)
+                    ->options([
+                        'publish' => 'publish',
+                        'private' => 'private'
+                    ])
+                    ->selectablePlaceholder(false)
 
             ])
             ->filters([
                 SelectFilter::make('visibility')
                     ->options([
-                    'publish' => 'publish',
-                    'private' => 'private'
-                ])->native(false)
+                        'publish' => 'publish',
+                        'private' => 'private'
+                    ])->native(false)
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

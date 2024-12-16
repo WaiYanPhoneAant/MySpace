@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Models\Project;
+use App\Models\project;
 use Livewire\Component;
 
 class ProjectView extends Component
